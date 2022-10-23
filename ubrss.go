@@ -14,11 +14,11 @@ func main() {
 	arg := flag.Arg(0)
 
 	switch arg {
-	case "number":
+	case "num":
 		numbers()
 	case "info":
 		info()
-	case "article":
+	case "art":
 		num := flag.Arg(1)
 		i, _ := strconv.Atoi(num)
 
@@ -30,33 +30,32 @@ func main() {
 }
 
 func numbers() {
-	feed, err := gofeed.NewParser().ParseURL("https://blog.umiirosoft.com/feed/")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
 	if err != nil {
 		panic(err)
 		return
 	}
-	fmt.Println("\n -> 現在 ", len(feed.Items), " 件の投稿があります！\n")
+	fmt.Println("\n 🔍 -> 現在 ", len(feed.Items), " 件の投稿があります！\n")
 }
 
 func info() {
-	feed, err := gofeed.NewParser().ParseURL("https://blog.umiirosoft.com/feed/")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
 	if err != nil {
 		panic(err)
 		return
 	}
 	fmt.Println("\n", feed.Title)
-	fmt.Println("\n -> ", feed.Description)
-	fmt.Println(" -> ", feed.Link, "\n")
+	fmt.Println(" 🌏 -> ", feed.Link, "\n")
 }
 
 func article(i int) {
-	feed, err := gofeed.NewParser().ParseURL("https://blog.umiirosoft.com/feed/")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
 	if err != nil {
 		panic(err)
 		return
 	}
 
 	fmt.Println("\n", feed.Items[i].Title)
-	fmt.Println("\n -> ", feed.Items[i].Link)
-	fmt.Println(" -> ", feed.Items[i].PublishedParsed.Format(time.RFC3339), "\n")
+	fmt.Println("\n 🌏 -> ", feed.Items[i].Link)
+	fmt.Println(" 📅 -> ", feed.Items[i].PublishedParsed.Format(time.RFC3339), "\n")
 }
