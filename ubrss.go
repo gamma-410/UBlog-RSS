@@ -30,7 +30,7 @@ func main() {
 }
 
 func numbers() {
-	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/5")
 	if err != nil {
 		panic(err)
 		return
@@ -39,7 +39,7 @@ func numbers() {
 }
 
 func info() {
-	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/5")
 	if err != nil {
 		panic(err)
 		return
@@ -49,7 +49,7 @@ func info() {
 }
 
 func article(i int) {
-	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/64")
+	feed, err := gofeed.NewParser().ParseURL("https://www.umiirosoft.com/redirect/plugin/whatsnews/rss/1/5")
 	if err != nil {
 		panic(err)
 		return
